@@ -22,8 +22,6 @@
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 {% endmacro %}
 {% macro comments_script_disqus_proxy(shortname, id, url)%}
-<link rel="stylesheet" href="{{ DISQUS_PROXY_URL }}/dist/iDisqus.min.css" />
-<script type="text/javascript" src="{{ DISQUS_PROXY_URL }}/dist/iDisqus.js"></script>
 <script type="text/javascript">
     var disq = new iDisqus('disqus_comments',{
         forum: '{{ shortname }}dis',
