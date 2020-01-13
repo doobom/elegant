@@ -21,3 +21,21 @@
 <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 {% endmacro %}
+{% macro comments_script_disqus_proxy(shortname, id, url)%}
+<link rel="stylesheet" href="{{ DISQUS_PROXY_URL }}/dist/iDisqus.min.css" />
+<script type="text/javascript" src="{{ DISQUS_PROXY_URL }}/dist/iDisqus.js"></script>
+<script type="text/javascript">
+    var disq = new iDisqus('disqus_thread',{
+        forum: '{{ shortname }}dis',
+        site: '{{ SITEURL }}',
+        api: '{{ DISQUS_PROXY_URL }}/{{ DISQUS_PROXY_API_NAME }}',
+        url: '/{{ article.url }}',
+        mode: 3,
+        timeout: 3000,
+        init: true,
+        emojiPreview: true
+    });
+    disq.count();
+</script>
+<noscript>Please enable JavaScript to view the comments.</noscript>
+{% endmacro %}

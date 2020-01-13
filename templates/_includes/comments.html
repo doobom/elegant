@@ -33,7 +33,11 @@
                    data-toggle="collapse"
                    data-parent="#accordion2"
                    {%if use_disqus %}
+                   {% if DISQUS_PROXY %}
+                   data-disqus-url="/{{ article.url }}"
+                   {% else %}
                    data-disqus-identifier="{{ identifier }}"
+                   {% endif %}
                    {% endif %}
                    href="{{ url }}#comment_thread"
                    id="comment-accordion-toggle">
@@ -46,7 +50,12 @@
                         {% if use_disqus %}
                         <div id="disqus_thread"></div>
                         {% from '_includes/disqus_scripts.html' import comments_script_disqus with context %}
+                        {% from '_includes/disqus_scripts.html' import comments_script_disqus_proxy with context %}
+                        {% if DISQUS_PROXY %}
+                        {{ comments_script_disqus_proxy(DISQUS_SITENAME, identifier , url) }}
+                        {% else %}
                         {{ comments_script_disqus(DISQUS_SITENAME, identifier , url) }}
+                        {% endif %}
                         {% endif %}
 
                         {% if use_utterances %}
