@@ -48,12 +48,13 @@
                 <div class="accordion-inner">
                     <div class="comments">
                         {% if use_disqus %}
-                        <div id="disqus_thread"></div>
                         {% from '_includes/disqus_scripts.html' import comments_script_disqus with context %}
                         {% from '_includes/disqus_scripts.html' import comments_script_disqus_proxy with context %}
                         {% if DISQUS_PROXY %}
+                        <div id="disqus_comments"></div>
                         {{ comments_script_disqus_proxy(DISQUS_SITENAME, identifier , url) }}
                         {% else %}
+                        <div id="disqus_thread"></div>
                         {{ comments_script_disqus(DISQUS_SITENAME, identifier , url) }}
                         {% endif %}
                         {% endif %}
