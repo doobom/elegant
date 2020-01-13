@@ -30,10 +30,10 @@
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="accordion-toggle disqus-comment-count comment-count"
-                   data-toggle="collapse"
-                   data-parent="#accordion2"
                    {%if use_disqus %}
                    {% if not DISQUS_PROXY %}
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
                    data-disqus-identifier="{{ identifier }}"
                    {% endif %}
                    {% endif %}
