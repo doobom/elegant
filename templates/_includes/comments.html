@@ -33,14 +33,12 @@
                    data-toggle="collapse"
                    data-parent="#accordion2"
                    {%if use_disqus %}
-                   {% if DISQUS_PROXY %}
-                   data-disqus-url="/{{ article.url }}"
-                   {% else %}
+                   {% if not DISQUS_PROXY %}
                    data-disqus-identifier="{{ identifier }}"
                    {% endif %}
                    {% endif %}
                    href="{{ url }}#comment_thread"
-                   id="comment-accordion-toggle">
+                   id="comment-accordion-toggle">{% if DISQUS_PROXY %}<span data-disqus-url="/{{ article.url }}"></span>{% endif %}
                     Comments
                 </a>
             </div>
