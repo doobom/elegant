@@ -46,10 +46,6 @@
         {% include '_includes/feeds.html' %}
         {% endblock feed_links %}
         {% include '_includes/analytics.html' %}
-        {% if DISQUS_PROXY %}
-        <link rel="stylesheet" href="{{ DISQUS_PROXY_URL }}/dist/iDisqus.min.css" />
-        <script type="text/javascript" src="{{ DISQUS_PROXY_URL }}/dist/iDisqus.js"></script>
-        {% endif %}
     </head>
     <body>
         <div id="content">
