@@ -28,7 +28,7 @@
     var disq = new iDisqus('disquscomments',{
         forum: '{{ shortname }}',
         site: '{{ SITEURL }}',
-        api: '{{ DISQUS_PROXY_URL }}',
+        api: '{{ DISQUS_PROXY_URL }}/{{ DISQUS_PROXY_API_NAME }}',
         url: '/{{ article.url }}',
         mode: 3,
         timeout: 3000,
