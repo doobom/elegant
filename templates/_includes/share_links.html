@@ -10,8 +10,7 @@
     {% endif %}
     {% for network, label in SHARE_LINKS %}
       {% if not loop.first %} {% endif %}
-      <a href="{{ article.share_post[network] }}" target="_blank" rel="nofollow noopener noreferrer" title="Share {% if network == 'email' %}via{% else %}on{% endif %} {{ label }}">
-        {% if network == 'twitter' %}<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="31" height="31">
+      <a href="{{ article.share_post[network] }}" target="_blank" rel="nofollow noopener noreferrer" title="Share {% if network == 'email' %}via{% else %}on{% endif %} {{ label }}">{% if network == 'twitter' %}<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="31" height="31">
 <path style="fill:#03A9F4;" d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
 	c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
 	c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
@@ -20,15 +19,12 @@
 	c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
 	C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
 	C480.224,136.96,497.728,118.496,512,97.248z"></path>
-</svg>{% endif %}
-        {% if network == 'facebook' %}<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="31" height="31">
+</svg>{% endif %}{% if network == 'facebook' %}<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="31" height="31">
 <path style="fill:#1976D2;" d="M448,0H64C28.704,0,0,28.704,0,64v384c0,35.296,28.704,64,64,64h384c35.296,0,64-28.704,64-64V64
 	C512,28.704,483.296,0,448,0z"></path>
 <path style="fill:#FAFAFA;" d="M432,256h-80v-64c0-17.664,14.336-16,32-16h32V96h-64l0,0c-53.024,0-96,42.976-96,96v64h-64v80h64
 	v176h96V336h48L432,256z"></path>
-</svg>{% endif %}
-        {% if network == 'hacker-news' %}<svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="31" height="31" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs12"></defs><g id="g3045"><path d="m -0.003935,-0.0039375 512.007865,0 0,512.0078775 -512.007865,0 z" id="path3032" style="fill:#f68423;fill-opacity:1;fill-rule:nonzero;stroke:none"></path><path d="m 108.74016,65.990163 122.49212,242.503937 0,137.51574 49.8189,0 0,-137.51574 122.20866,-242.503937 -54.1063,0 -93.11811,182.586607 -89.5748,-182.586607 -57.72047,0 z" id="path3034" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"></path></g></svg>{% endif %}
-        {% if network == 'reddit' %}<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 514.24 514.24" style="enable-background:new 0 0 514.24 514.24;" xml:space="preserve" width="31" height="31">
+</svg>{% endif %}{% if network == 'hacker-news' %}<svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="31" height="31" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs12"></defs><g id="g3045"><path d="m -0.003935,-0.0039375 512.007865,0 0,512.0078775 -512.007865,0 z" id="path3032" style="fill:#f68423;fill-opacity:1;fill-rule:nonzero;stroke:none"></path><path d="m 108.74016,65.990163 122.49212,242.503937 0,137.51574 49.8189,0 0,-137.51574 122.20866,-242.503937 -54.1063,0 -93.11811,182.586607 -89.5748,-182.586607 -57.72047,0 z" id="path3034" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"></path></g></svg>{% endif %}{% if network == 'reddit' %}<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 514.24 514.24" style="enable-background:new 0 0 514.24 514.24;" xml:space="preserve" width="31" height="31">
 <g>
 	<polygon style="fill:#FAFAFA;" points="192,289.121 176,289.089 176,289.121 	"></polygon>
 	<polygon style="fill:#FAFAFA;" points="336,289.121 352,289.121 336,289.089 	"></polygon>
@@ -48,8 +44,7 @@
 		c7.136-5.152,17.12-3.616,22.336,3.584C338.656,380.097,337.024,390.081,329.888,395.265z"></path>
 	<circle style="fill:#FAFAFA;" cx="336" cy="289.121" r="32"></circle>
 </g>
-</svg>{% endif %}
-        {% if network == 'linkedin' %}<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="31" height="31">
+</svg>{% endif %}{% if network == 'linkedin' %}<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="31" height="31">
 <g>
 	<rect y="160" style="fill:#1976D2;" width="114.496" height="352"></rect>
 	<path style="fill:#1976D2;" d="M426.368,164.128c-1.216-0.384-2.368-0.8-3.648-1.152c-1.536-0.352-3.072-0.64-4.64-0.896
@@ -57,8 +52,7 @@
 		c0,0,86.528-120.512,123.04-32c0,79.008,0,224,0,224H512V274.464C512,221.28,475.552,176.96,426.368,164.128z"></path>
 	<circle style="fill:#1976D2;" cx="56" cy="56" r="56"></circle>
 </g>
-</svg>{% endif %}
-        {% if network == 'email' %}<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="31" height="31">
+</svg>{% endif %}{% if network == 'email' %}<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="31" height="31">
 <path style="fill:#1E88E5;" d="M480,432H32c-17.664,0-32-14.336-32-32V112c0-17.664,14.336-32,32-32h448c17.664,0,32,14.336,32,32
 	v288C512,417.664,497.664,432,480,432z"></path>
 <path style="fill:#2196F3;" d="M480,432H32c-17.952,0-32-14.048-32-32c0-5.088,2.432-9.888,6.528-12.896l240-160
@@ -66,8 +60,7 @@
 	C512,417.952,497.952,432,480,432z"></path>
 <path style="fill:#64B5F6;" d="M480,80H32C14.048,80,0,94.048,0,112c0,5.088,2.432,9.888,6.528,12.896L246.656,297.28
 	c5.568,4,13.088,4,18.656,0L505.44,124.896c4.128-3.008,6.56-7.808,6.56-12.896C512,94.048,497.952,80,480,80z"></path>
-</svg>{% endif %}
-      </a>
+</svg>{% endif %}</a>
     {% endfor %}
     {% endif %}
 {% endmacro %}
